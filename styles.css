@@ -38,42 +38,39 @@ header {
   margin: 5px 35px;
 }
 
-ul {
+.nav-links {
+  list-style: none;
   text-transform: uppercase;
   padding: 0;
   margin: 0;
-}
+  overflow: hidden;
+  }
+  
+  .nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+  }
 
-li, a {
-  font-size: 16px;
-  color: #ecf0f1;
-  text-decoration: none;
-}
-
-.nav-links {
-list-style: none;
-}
-
-.nav-links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-
+  
 @media screen and (max-width: 1150px) {
   .nav-links li {
     padding:0 10px;
   }
-  
 }
 
 @media screen and (max-width: 700px) {
   .nav-links li {
     padding:0 2px;
   }
-  
 }
 
-.nav-links li a {
+
+li, a {
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.nav-links li a, .dropbtn {
   color: black;
   transition: all 0.3s ease 0s;
 }
@@ -82,15 +79,42 @@ list-style: none;
   color:#ffff;
 }
 
-.wishlist, .cart {
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
   color: black;
+  padding: 10px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: rgba(45, 73, 44, 1);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;}
+
+.wishlist, .cart {
   transition: all 0.3s ease 0s;
   margin:0px;
   padding: 0px;
 }
 
 .wishlist:hover, .cart:hover {
-  color: white;
+  color: #ffff;
 }
 
 .fa-caret-down{
@@ -105,7 +129,6 @@ button {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease 0s;
-
 }
 
 button:hover{
